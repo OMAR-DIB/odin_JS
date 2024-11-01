@@ -6,7 +6,7 @@ function MyBook(title, author, numberOfPages, isReaded) {
   this.numberOfPages = numberOfPages;
   this.isReaded = isReaded;
   this.info = function () {
-    return `The  ${this.title} by ${this.author}, ${this.numberOfPages} pages, ${isReaded ? 'read' : 'not read yet'}`;
+    return `The  ${this.title} by ${this.author}, ${this.numberOfPages} pages, ${this.isReaded ? 'read' : 'not read yet'}`;
   };
   this.toggleRead = function(){
     this.isReaded = !this.isReaded;
