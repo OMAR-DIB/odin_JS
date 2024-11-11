@@ -1,4 +1,5 @@
 import "./styles.css";
+import correct from "../assets/check-underline.svg";
 
 const add = document.querySelector("button");
 const myUL = document.querySelector(".my-list");
@@ -22,6 +23,13 @@ add.addEventListener("click", () => {
     myUL.appendChild(fieldContainer);
     document.querySelector(".myInput").value = "";
 
+    //task done
+    const correctSign = document.createElement("img");
+    correctSign.src = correct;
+    correctSign.style.width = "20px";
+    correctSign.style.height = "20px";
+
+    // delete task
     const mybutton = document.createElement("span");
     mybutton.textContent = "X";
     fieldContainer.appendChild(mybutton);
@@ -29,11 +37,15 @@ add.addEventListener("click", () => {
     mybutton.onclick = function () {
         fieldContainer.remove();
     }
+
+    // task done
     field.onclick = function () {
         if (this.style.textDecoration === "line-through") {
             this.style.textDecoration = "none";
+            correctSign.remove();
         } else {
             this.style.textDecoration = "line-through";
+            field.before(correctSign);
         }
     };
     fieldContainer.style.display = "flex";  
