@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s;
+}
+#weather-info {
+  margin-top: 20px;
+}
+#gif-container {
+  margin-top: 20px;
+}
